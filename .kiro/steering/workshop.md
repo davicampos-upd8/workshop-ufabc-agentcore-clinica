@@ -27,6 +27,10 @@ Todos os dados são fictícios e destinados exclusivamente ao workshop.
 
 A skill local `amazon-bedrock` é a referência técnica para os recursos de Bedrock e AgentCore.
 
+## Execução da primeira fase
+
+O primeiro prompt exige provisionamento real na conta AWS da sessão. O Kiro deve executar AWS CLI v2 e boto3 para criar, configurar e testar S3, Knowledge Base, S3 Vectors, DynamoDB, AgentCore Harness, Lambda e API Gateway; não deve apenas gerar código, scripts, IaC, plano ou instruções futuras. Deve aguardar os recursos ficarem prontos e validar chamadas reais. Somente a integração e a publicação de `frontend/index.html` pertencem à segunda fase.
+
 ## Convenções do ambiente
 
 - Antes de abrir o Kiro CLI, as credenciais AWS (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` e, quando aplicável, `AWS_SESSION_TOKEN`) e a região (`AWS_REGION` e `AWS_DEFAULT_REGION`) já estarão exportadas na sessão do terminal.

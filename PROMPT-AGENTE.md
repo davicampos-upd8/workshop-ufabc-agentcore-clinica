@@ -6,6 +6,14 @@ Esse agente será responsável por conversar com a cliente, entender sua queixa 
 
 O agente deve ser administrativo e informativo. Ele não pode diagnosticar condições médicas, prescrever tratamentos, prometer resultados ou substituir uma avaliação presencial. Quando não houver informação suficiente ou existir contraindicação, deve orientar a cliente a procurar um profissional habilitado.
 
+## Execução obrigatória nesta fase
+
+Esta é a fase de **provisionamento real do backend na conta AWS ativa**, e não uma fase de planejamento. Execute os comandos AWS CLI v2 e scripts boto3 necessários para criar, configurar e testar os recursos reais na conta e região da sessão. Não encerre entregando apenas código, scripts, infraestrutura como código, um plano ou instruções para execução posterior.
+
+Nesta fase, envie os documentos ao S3, crie e sincronize a Knowledge Base, crie e carregue o DynamoDB, publique e invoque o AgentCore Harness, e provisione a Lambda e o API Gateway. Aguarde os estados necessários, registre os identificadores e URLs resultantes e faça chamadas reais de teste aos recursos provisionados. Se uma chamada AWS falhar, apresente o erro real e corrija-o; não simule sucesso.
+
+A única etapa posterior é a integração e publicação do `frontend/index.html`, tratada exclusivamente em `PROMPT-FRONTEND.md`.
+
 ## Capacidades esperadas
 
 - Consultar os documentos em `procedimentos/` para explicar os procedimentos e relacioná-los às queixas apresentadas.
@@ -33,7 +41,7 @@ O agente deve ser administrativo e informativo. Ele não pode diagnosticar condi
 
 ## API para integração
 
-Também será necessário construir uma API HTTP para expor o agente ao front-end em uma etapa posterior.
+Provisione **agora, nesta mesma fase**, a API HTTP que expõe o agente. A etapa posterior se refere somente a conectar e publicar o front-end, e não à criação da API.
 
 A API deve usar **AWS Lambda e Amazon API Gateway**. A Lambda será responsável por receber a mensagem, invocar o AgentCore Harness com credenciais AWS e devolver a resposta. O navegador nunca deve receber credenciais AWS nem acessar o Harness diretamente.
 

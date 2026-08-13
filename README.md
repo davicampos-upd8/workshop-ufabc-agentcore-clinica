@@ -17,7 +17,7 @@ Seed para construir um agente de atendimento de uma clínica de estética fictí
    ```bash
    kiro-cli --v3
    ```
-3. Crie uma Spec e envie o conteúdo de [`PROMPT-AGENTE.md`](PROMPT-AGENTE.md):
+3. Crie uma Spec e envie o conteúdo de [`PROMPT-AGENTE.md`](PROMPT-AGENTE.md). Esse primeiro prompt deve provisionar e testar os recursos reais de backend na sua conta AWS; não é apenas uma geração de código ou plano.
    ```text
    /spec new clinica-agente
    ```
