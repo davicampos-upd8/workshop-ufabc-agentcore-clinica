@@ -31,6 +31,12 @@ A skill local `amazon-bedrock` é uma referência técnica para Bedrock e AgentC
 
 O primeiro prompt exige provisionamento real na conta AWS da sessão. O Kiro deve usar exclusivamente AWS CLI v2 e boto3 para criar, configurar e testar S3, Knowledge Base, S3 Vectors, DynamoDB, AgentCore Harness, Lambda e API Gateway; não deve apenas gerar código, scripts, IaC, plano ou instruções futuras. Deve aguardar os recursos ficarem prontos, validar chamadas reais e registrar em `deployment.json`, sem dados sensíveis, o prefixo, os identificadores dos recursos e a URL da API. Somente a integração e a publicação de `frontend/index.html` pertencem à segunda fase.
 
+## AgentCore: usar somente Harness
+
+O AgentCore Harness é obrigatório. Ele é o loop de agente gerenciado e cria/gerencia o Runtime subjacente; Runtime direto é outra modalidade, baseada em código/container próprio, e não pertence a este projeto. Não criar Runtime HTTP direto, servidor próprio, container próprio nem endpoints manuais do protocolo de invocação.
+
+Antes do deploy, ler `.kiro/skills/amazon-bedrock/references/agentcore-harness.md`, em especial **What It Is**, **Harness vs. Runtime** e **Deployment Workflow**. Criar o Harness, aguardar `READY` e invocar seu data plane com `runtimeSessionId`; a Lambda invoca o Harness.
+
 ## Escopo e validação do workshop
 
 O workshop é curto. Priorize o menor recorte funcional capaz de demonstrar o fluxo completo, em vez de ampliar a arquitetura ou adicionar abstrações não necessárias. Valide cada entrega com smoke tests reais e proporcionais — por exemplo, chamadas à API, invocação do agente ou consulta aos recursos criados.

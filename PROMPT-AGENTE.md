@@ -12,6 +12,12 @@ Esta é a fase de **provisionamento real do backend na conta AWS ativa**, e não
 
 Nesta fase, envie os documentos ao S3, crie e sincronize a Knowledge Base, crie e carregue o DynamoDB, publique e invoque o AgentCore Harness, e provisione a Lambda e o API Gateway. Aguarde os estados necessários, registre os identificadores e URLs resultantes e faça chamadas reais de teste aos recursos provisionados. Se uma chamada AWS falhar, apresente o erro real e corrija-o; não simule sucesso.
 
+## AgentCore obrigatório: Harness, não Runtime direto
+
+Use especificamente o **Amazon Bedrock AgentCore Harness**. O Harness é um loop de agente gerenciado e configurável: ele cria e gerencia o Runtime subjacente. Não crie nem publique um AgentCore Runtime HTTP direto, servidor Python próprio, container próprio ou endpoints de protocolo do Runtime; não implemente manualmente `POST` para a invocação do agente.
+
+Antes do deploy, leia `.kiro/skills/amazon-bedrock/references/agentcore-harness.md`, especialmente as seções **What It Is**, **Harness vs. Runtime** e **Deployment Workflow**. Siga o fluxo de criar o Harness, aguardar o status `READY` e invocá-lo pelo data plane com `runtimeSessionId`; a Lambda deve invocar o Harness, não um Runtime direto.
+
 Você está autorizado a instalar, sem pedir confirmação adicional, as dependências ausentes realmente necessárias para executar, testar ou validar o projeto. Em razão do tempo curto do workshop, não crie uma suíte de testes nem instale ferramentas de teste apenas para cobertura; prefira smoke tests reais e proporcionais. Quando uma dependência for necessária, prefira um ambiente isolado do projeto e registre sua versão exata.
 
 A única etapa posterior é a integração e publicação do `frontend/index.html`, tratada exclusivamente em `PROMPT-FRONTEND.md`.
