@@ -12,6 +12,8 @@ Esta é a fase de **provisionamento real do backend na conta AWS ativa**, e não
 
 Nesta fase, envie os documentos ao S3, crie e sincronize a Knowledge Base, crie e carregue o DynamoDB, publique e invoque o AgentCore Harness, e provisione a Lambda e o API Gateway. Aguarde os estados necessários, registre os identificadores e URLs resultantes e faça chamadas reais de teste aos recursos provisionados. Se uma chamada AWS falhar, apresente o erro real e corrija-o; não simule sucesso.
 
+Você está autorizado a instalar, sem pedir confirmação adicional, as dependências ausentes necessárias para executar, testar ou validar o projeto — inclusive ferramentas de teste como `pytest`. Prefira um ambiente isolado do projeto e registre versões exatas das dependências adicionadas.
+
 A única etapa posterior é a integração e publicação do `frontend/index.html`, tratada exclusivamente em `PROMPT-FRONTEND.md`.
 
 ## Capacidades esperadas
