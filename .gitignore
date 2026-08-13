@@ -10,3 +10,6 @@ __pycache__/
 
 # Specs individuais geradas durante o workshop
 .kiro/specs/
+
+# Manifesto local da infraestrutura criada no workshop
+deployment.json

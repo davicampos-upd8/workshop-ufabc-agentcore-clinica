@@ -4,7 +4,7 @@ Seed para construir um agente de atendimento de uma clínica de estética fictí
 
 ## Como usar
 
-1. **Antes de abrir o Kiro CLI**, exporte no mesmo terminal as credenciais AWS e os valores do seu slot entregues no workshop. Exemplo:
+1. **Antes de abrir o Kiro CLI**, exporte no mesmo terminal as credenciais e a região AWS fornecidas para o workshop. Exemplo:
    ```bash
    export AWS_ACCESS_KEY_ID='...'
    export AWS_SECRET_ACCESS_KEY='...'
@@ -12,7 +12,7 @@ Seed para construir um agente de atendimento de uma clínica de estética fictí
    export AWS_REGION='us-east-1'
    export AWS_DEFAULT_REGION="$AWS_REGION"
    ```
-   Essas credenciais pertencem ao usuário IAM provisionado para o workshop. O Kiro CLI e os comandos que ele executar herdarão essas variáveis e devem usar esse usuário diretamente. O agente gerará uma vez o prefixo `nova-essencia-<uuid-curto>` e usará o modelo fixo `anthropic.claude-sonnet-4-6` (Claude Sonnet 4.6); não há escolha manual desses valores. **Não crie nem use um arquivo `.env`**, não informe ARNs de roles e nunca registre credenciais no repositório.
+   Essas credenciais pertencem ao usuário IAM provisionado para o workshop. O Kiro CLI e os comandos que ele executar herdarão essas variáveis e devem usar esse usuário diretamente. O agente gerará uma vez o prefixo `nova-essencia-<uuid-curto>` e usará o modelo fixo `anthropic.claude-sonnet-4-6` (Claude Sonnet 4.6); não há escolha manual desses valores. Não crie arquivos locais de credenciais ou configuração de acesso, nem registre credenciais, tokens ou dados sensíveis no repositório.
 2. Inicie o Kiro CLI v3:
    ```bash
    kiro-cli --v3

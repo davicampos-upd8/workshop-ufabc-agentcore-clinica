@@ -6,6 +6,7 @@ O agente e a API com AWS Lambda e Amazon API Gateway já foram construídos. Nes
 
 ## Integração esperada
 
+- Ler `deployment.json` gerado na primeira fase e reutilizar exatamente o `WORKSHOP_PREFIX`, a URL do API Gateway e os identificadores registrados. Não gerar um novo prefixo nem recriar recursos de backend.
 - Configurar no front-end a URL do API Gateway criado anteriormente.
 - Enviar as mensagens para `POST /chat` no formato:
   ```json
