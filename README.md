@@ -19,22 +19,20 @@ Seed para construir um agente de atendimento de uma clínica de estética fictí
    kiro-cli --v3 chat --trust-all-tools
    ```
 
-3. No Kiro CLI, inicie uma conversa e abra o seletor de modelo:
+3. Na conversa inicial do Kiro, envie apenas esta solicitação:
+   ```text
+   Clone este repositório no diretório atual:
+   https://github.com/davicampos-upd8/workshop-ufabc-agentcore-clinica
+   ```
+
+4. Depois que o clone terminar, abra uma nova conversa e o seletor de modelo:
    ```text
    /chat new
    /model
    ```
    No seletor interativo, escolha **GPT 5.6 Terra**.
 
-4. Na mesma conversa, envie esta solicitação ao Kiro:
-   ```text
-   Baixe o seed do workshop, entre no diretório do projeto e use-o como contexto desta sessão:
-   https://github.com/davicampos-upd8/workshop-ufabc-agentcore-clinica
-
-   Se o Git não estiver disponível, baixe o conteúdo do repositório por outro método disponível e prepare o diretório do projeto da mesma forma.
-   ```
-
-5. Depois que o Kiro confirmar que está no diretório do seed, crie a Spec:
+5. Crie a Spec:
    ```text
    /spec new agente-clinica
    ```
