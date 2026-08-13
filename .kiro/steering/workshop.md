@@ -45,5 +45,6 @@ Não crie uma suíte de testes, framework de testes ou dependências como `pytes
 - As credenciais exportadas pertencem ao usuário IAM provisionado para o workshop. O Kiro CLI e os subprocessos que ele executar devem usar essa identidade herdada do ambiente diretamente.
 - O Kiro pode instalar, sem pedir confirmação adicional, dependências ausentes necessárias para executar, testar ou validar o projeto. Prefira ambiente isolado do projeto e versões exatas para dependências adicionadas.
 - Não criar arquivos locais de credenciais ou configuração de acesso e não alterar a configuração de identidade ou acesso da conta. Nunca persistir credenciais ou dados sensíveis em arquivos ou código.
+- Para a API Gateway deste workshop, configurar CORS com `Access-Control-Allow-Origin: *`, sem credenciais, permitindo `GET`, `POST`, `OPTIONS` e o cabeçalho `Content-Type`. Não pedir uma origem específica nem condicionar testes E2E a um domínio publicado.
 - Todos os recursos devem usar `WORKSHOP_PREFIX` em seus nomes.
 - A aplicação e suas mensagens devem estar em português do Brasil.
