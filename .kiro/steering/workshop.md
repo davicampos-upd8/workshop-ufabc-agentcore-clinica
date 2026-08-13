@@ -43,8 +43,10 @@ Não crie uma suíte de testes, framework de testes ou dependências como `pytes
 - Antes de criar recursos, gerar **uma única vez** um UUID curto com 8 caracteres hexadecimais minúsculos e definir `WORKSHOP_PREFIX` como `nova-essencia-<uuid-curto>`. Reutilizar exatamente esse valor em todos os nomes de recursos e artefatos gerados; não perguntar por prefixo.
 - Usar obrigatoriamente `anthropic.claude-sonnet-4-6` (Claude Sonnet 4.6) como `BEDROCK_MODEL_ID`; não perguntar pelo modelo nem oferecer alternativas.
 - As credenciais exportadas pertencem ao usuário IAM provisionado para o workshop. O Kiro CLI e os subprocessos que ele executar devem usar essa identidade herdada do ambiente diretamente.
+- Criar as roles de serviço necessárias para Knowledge Base, AgentCore Harness, Lambda e demais recursos que as exijam. Usar nomes com `WORKSHOP_PREFIX`, trust policy com o principal de serviço AWS correto e associar cada role ao recurso correspondente.
+- Neste ambiente de workshop, as policies de permissão das roles de serviço podem usar `Action: "*"` e `Resource: "*"` para simplificar o provisionamento. Isso não é um padrão de produção.
 - O Kiro pode instalar, sem pedir confirmação adicional, dependências ausentes necessárias para executar, testar ou validar o projeto. Prefira ambiente isolado do projeto e versões exatas para dependências adicionadas.
-- Não criar arquivos locais de credenciais ou configuração de acesso e não alterar a configuração de identidade ou acesso da conta. Nunca persistir credenciais ou dados sensíveis em arquivos ou código.
+- Não criar arquivos locais de credenciais ou configuração de acesso. Nunca persistir credenciais ou dados sensíveis em arquivos ou código.
 - Para a API Gateway deste workshop, configurar CORS com `Access-Control-Allow-Origin: *`, sem credenciais, permitindo `GET`, `POST`, `OPTIONS` e o cabeçalho `Content-Type`. Não pedir uma origem específica nem condicionar testes E2E a um domínio publicado.
 - Todos os recursos devem usar `WORKSHOP_PREFIX` em seus nomes.
 - A aplicação e suas mensagens devem estar em português do Brasil.
