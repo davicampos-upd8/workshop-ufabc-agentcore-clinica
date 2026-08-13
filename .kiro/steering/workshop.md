@@ -30,7 +30,8 @@ A skill local `amazon-bedrock` é a referência técnica para os recursos de Bed
 ## Convenções do ambiente
 
 - Antes de abrir o Kiro CLI, as credenciais AWS (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` e, quando aplicável, `AWS_SESSION_TOKEN`) e a região (`AWS_REGION` e `AWS_DEFAULT_REGION`) já estarão exportadas na sessão do terminal.
-- A mesma sessão conterá `WORKSHOP_PREFIX`, `WORKSHOP_SLOT`, `BEDROCK_MODEL_ID`, `KB_EXECUTION_ROLE_ARN`, `HARNESS_EXECUTION_ROLE_ARN` e `LAMBDA_EXECUTION_ROLE_ARN` com os valores do slot.
-- O Kiro CLI e os subprocessos que ele executar devem usar essas variáveis herdadas do ambiente. Não criar, carregar ou exigir arquivo `.env`; nunca persistir credenciais em arquivos ou código.
+- A mesma sessão conterá `WORKSHOP_PREFIX`, `WORKSHOP_SLOT` e `BEDROCK_MODEL_ID` com os valores do slot.
+- As credenciais exportadas pertencem ao usuário IAM provisionado para o workshop. O Kiro CLI e os subprocessos que ele executar devem usar essa identidade herdada do ambiente diretamente.
+- Não procurar, pedir, criar, alterar, assumir ou configurar roles IAM; este workshop não usa ARNs de roles de execução. Não criar, carregar ou exigir arquivo `.env`; nunca persistir credenciais em arquivos ou código.
 - Todos os recursos devem usar `WORKSHOP_PREFIX` em seus nomes.
 - A aplicação e suas mensagens devem estar em português do Brasil.

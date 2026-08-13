@@ -14,11 +14,8 @@ Seed para construir um agente de atendimento de uma clínica de estética fictí
    export WORKSHOP_PREFIX='ufabc-2026-XX-east'
    export WORKSHOP_SLOT='XX-east'
    export BEDROCK_MODEL_ID='MODELO_APROVADO'
-   export KB_EXECUTION_ROLE_ARN='arn:aws:iam::ACCOUNT_ID:role/UFABCKBExecution-XX-east'
-   export HARNESS_EXECUTION_ROLE_ARN='arn:aws:iam::ACCOUNT_ID:role/UFABCHarnessExecution-XX-east'
-   export LAMBDA_EXECUTION_ROLE_ARN='arn:aws:iam::ACCOUNT_ID:role/UFABCLambdaExecution-XX-east'
    ```
-   O Kiro CLI e os comandos que ele executar herdarão essas variáveis. **Não crie nem use um arquivo `.env`** e nunca registre credenciais no repositório.
+   Essas credenciais pertencem ao usuário IAM provisionado para o workshop. O Kiro CLI e os comandos que ele executar herdarão essas variáveis e devem usar esse usuário diretamente. **Não crie nem use um arquivo `.env`**, não informe ARNs de roles e nunca registre credenciais no repositório.
 2. Inicie o Kiro CLI v3:
    ```bash
    kiro-cli --v3
