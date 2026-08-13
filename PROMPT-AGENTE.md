@@ -1,6 +1,6 @@
 # Prompt — Agente e API
 
-Quero criar um agente de IA para a clínica de estética fictícia **Nova Essência**.
+Quero criar, no modo spec, um agente de IA para a clínica de estética fictícia **Nova Essência**.
 
 Esse agente será responsável por conversar com a cliente, entender sua queixa em linguagem natural, consultar a base de procedimentos da clínica, sugerir opções compatíveis, apresentar horários realmente disponíveis e registrar uma marcação.
 
