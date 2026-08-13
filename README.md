@@ -2,9 +2,9 @@
 
 Seed para construir um agente de atendimento de uma clínica de estética fictícia com Kiro CLI v3, Amazon Bedrock e AgentCore.
 
-## Como usar
+## Roteiro do workshop
 
-1. **Antes de abrir o Kiro CLI**, exporte no mesmo terminal as credenciais e a região AWS fornecidas para o workshop. Exemplo:
+1. **Antes de abrir o Kiro CLI**, exporte no mesmo terminal as credenciais e a região AWS fornecidas para o workshop:
    ```bash
    export AWS_ACCESS_KEY_ID='...'
    export AWS_SECRET_ACCESS_KEY='...'
@@ -12,16 +12,31 @@ Seed para construir um agente de atendimento de uma clínica de estética fictí
    export AWS_REGION='us-east-1'
    export AWS_DEFAULT_REGION="$AWS_REGION"
    ```
-   Essas credenciais pertencem ao usuário IAM provisionado para o workshop. O Kiro CLI e os comandos que ele executar herdarão essas variáveis e devem usar esse usuário diretamente. O agente gerará uma vez o prefixo `nova-essencia-<uuid-curto>` e usará o modelo fixo `anthropic.claude-sonnet-4-6` (Claude Sonnet 4.6); não há escolha manual desses valores. Não crie arquivos locais de credenciais ou configuração de acesso, nem registre credenciais, tokens ou dados sensíveis no repositório.
-2. Inicie o Kiro CLI v3:
+   As credenciais pertencem ao usuário IAM provisionado para o workshop. Não registre credenciais, tokens ou dados sensíveis no repositório.
+
+2. Clone o seed e entre no diretório:
    ```bash
-   kiro-cli --v3
+   git clone https://github.com/davicampos-upd8/workshop-ufabc-agentcore-clinica.git
+   cd workshop-ufabc-agentcore-clinica
    ```
-3. Crie uma Spec e envie o conteúdo de [`PROMPT-AGENTE.md`](PROMPT-AGENTE.md). Esse primeiro prompt deve provisionar e testar os recursos reais de backend na sua conta AWS; não é apenas uma geração de código ou plano.
+
+3. Inicie o Kiro CLI v3 com confiança nas ferramentas:
+   ```bash
+   kiro-cli --v3 chat --trust-all-tools
+   ```
+
+4. No Kiro CLI, inicie uma conversa, selecione o modelo e crie a Spec:
    ```text
-   /spec new clinica-agente
+   /chat new
+   /model GPT 5.6 Terra
+   /spec new agente-clinica
    ```
-4. Depois que o agente e a API estiverem funcionando, abra uma conversa no Chat e envie o conteúdo de [`PROMPT-FRONTEND.md`](PROMPT-FRONTEND.md).
+
+5. Envie o conteúdo de [`PROMPT-AGENTE.md`](PROMPT-AGENTE.md) na conversa. Essa primeira fase deve provisionar e testar os recursos reais de backend na conta AWS; não é apenas uma geração de código ou plano.
+
+6. Depois que o agente e a API estiverem funcionando, abra uma nova conversa e envie o conteúdo de [`PROMPT-FRONTEND.md`](PROMPT-FRONTEND.md) para integrar e publicar o front-end.
+
+> O modelo do Kiro nesta sessão é **GPT 5.6 Terra**. O modelo a ser usado pelo agente implantado no Amazon Bedrock continua definido no prompt como **Claude Sonnet 4.6**.
 
 ## Arquivos principais
 
