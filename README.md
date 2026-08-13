@@ -14,25 +14,31 @@ Seed para construir um agente de atendimento de uma clínica de estética fictí
    ```
    As credenciais pertencem ao usuário IAM provisionado para o workshop. Não registre credenciais, tokens ou dados sensíveis no repositório.
 
-2. Clone o seed e entre no diretório:
-   ```bash
-   git clone https://github.com/davicampos-upd8/workshop-ufabc-agentcore-clinica.git
-   cd workshop-ufabc-agentcore-clinica
-   ```
-
-3. Inicie o Kiro CLI v3 com confiança nas ferramentas:
+2. Inicie o Kiro CLI v3 com confiança nas ferramentas:
    ```bash
    kiro-cli --v3 chat --trust-all-tools
    ```
 
-4. No Kiro CLI, inicie uma conversa, selecione o modelo e crie a Spec:
+3. No Kiro CLI, inicie uma conversa e abra o seletor de modelo:
    ```text
    /chat new
-   /model GPT 5.6 Terra
-   /spec new agente-clinica
+   /model
+   ```
+   No seletor interativo, escolha **GPT 5.6 Terra**.
+
+4. Na mesma conversa, envie esta solicitação ao Kiro:
+   ```text
+   Baixe o seed do workshop, entre no diretório do projeto e use-o como contexto desta sessão:
+   https://github.com/davicampos-upd8/workshop-ufabc-agentcore-clinica
+
+   Se o Git não estiver disponível, baixe o conteúdo do repositório por outro método disponível e prepare o diretório do projeto da mesma forma.
    ```
 
-5. Envie o conteúdo de [`PROMPT-AGENTE.md`](PROMPT-AGENTE.md) na conversa. Essa primeira fase deve provisionar e testar os recursos reais de backend na conta AWS; não é apenas uma geração de código ou plano.
+5. Depois que o Kiro confirmar que está no diretório do seed, crie a Spec:
+   ```text
+   /spec new agente-clinica
+   ```
+   Em seguida, envie o conteúdo de [`PROMPT-AGENTE.md`](PROMPT-AGENTE.md). Essa primeira fase deve provisionar e testar os recursos reais de backend na conta AWS; não é apenas uma geração de código ou plano.
 
 6. Depois que o agente e a API estiverem funcionando, abra uma nova conversa e envie o conteúdo de [`PROMPT-FRONTEND.md`](PROMPT-FRONTEND.md) para integrar e publicar o front-end.
 
