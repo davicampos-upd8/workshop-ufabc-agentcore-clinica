@@ -4,7 +4,21 @@ Seed para construir um agente de atendimento de uma clínica de estética fictí
 
 ## Como usar
 
-1. Configure as credenciais AWS no terminal e copie `.env.example` para `.env` com os valores do seu ambiente.
+1. **Antes de abrir o Kiro CLI**, exporte no mesmo terminal as credenciais AWS e os valores do seu slot entregues no workshop. Exemplo:
+   ```bash
+   export AWS_ACCESS_KEY_ID='...'
+   export AWS_SECRET_ACCESS_KEY='...'
+   export AWS_SESSION_TOKEN='...' # somente para credenciais temporárias
+   export AWS_REGION='us-east-1'
+   export AWS_DEFAULT_REGION="$AWS_REGION"
+   export WORKSHOP_PREFIX='ufabc-2026-XX-east'
+   export WORKSHOP_SLOT='XX-east'
+   export BEDROCK_MODEL_ID='MODELO_APROVADO'
+   export KB_EXECUTION_ROLE_ARN='arn:aws:iam::ACCOUNT_ID:role/UFABCKBExecution-XX-east'
+   export HARNESS_EXECUTION_ROLE_ARN='arn:aws:iam::ACCOUNT_ID:role/UFABCHarnessExecution-XX-east'
+   export LAMBDA_EXECUTION_ROLE_ARN='arn:aws:iam::ACCOUNT_ID:role/UFABCLambdaExecution-XX-east'
+   ```
+   O Kiro CLI e os comandos que ele executar herdarão essas variáveis. **Não crie nem use um arquivo `.env`** e nunca registre credenciais no repositório.
 2. Inicie o Kiro CLI v3:
    ```bash
    kiro-cli --v3

@@ -18,10 +18,10 @@ O agente deve ser administrativo e informativo. Ele não pode diagnosticar condi
 
 ## Stack e definições técnicas
 
-- A conta AWS já estará configurada com credenciais válidas na sessão do terminal.
-- Região, prefixo dos recursos, modelo aprovado e ARNs das roles estão definidos no arquivo `.env`.
+- Antes de abrir o Kiro CLI, a sessão do terminal terá recebido credenciais AWS exportadas em `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` e, quando aplicável, `AWS_SESSION_TOKEN`, além de `AWS_REGION` e `AWS_DEFAULT_REGION`.
+- A mesma sessão também terá `WORKSHOP_PREFIX`, `WORKSHOP_SLOT`, `BEDROCK_MODEL_ID`, `KB_EXECUTION_ROLE_ARN`, `HARNESS_EXECUTION_ROLE_ARN` e `LAMBDA_EXECUTION_ROLE_ARN` exportadas com os valores do slot.
+- Use essas variáveis herdadas do processo para todos os comandos AWS CLI v2 e scripts boto3. Não crie, carregue ou exija um arquivo `.env`; nunca grave credenciais ou valores sensíveis no código, em arquivos de configuração ou no repositório.
 - As roles de execução já existem e devem ser utilizadas como estão. Não é necessário criar ou alterar recursos de IAM.
-- Usar AWS CLI v2 e boto3 para interagir com a AWS.
 - Criar a base de conhecimento com Amazon Bedrock Knowledge Bases, Amazon S3 e S3 Vectors. Os arquivos em `procedimentos/` são a fonte de conhecimento.
 - Usar Amazon DynamoDB para persistir horários e reservas, inicializando os dados a partir dos arquivos em `dados/`.
 - Usar escrita condicional no DynamoDB para evitar que duas clientes reservem o mesmo horário.

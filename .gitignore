@@ -1,6 +1,4 @@
-# Credenciais e configuração específica do slot do workshop
-.env
-.env.local
+# Credenciais locais
 .aws/
 *.pem
 *.key
