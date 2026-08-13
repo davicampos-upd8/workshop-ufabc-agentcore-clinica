@@ -19,7 +19,8 @@ O agente deve ser administrativo e informativo. Ele não pode diagnosticar condi
 ## Stack e definições técnicas
 
 - Antes de abrir o Kiro CLI, a sessão do terminal terá recebido credenciais AWS exportadas em `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` e, quando aplicável, `AWS_SESSION_TOKEN`, além de `AWS_REGION` e `AWS_DEFAULT_REGION`.
-- A mesma sessão também terá `WORKSHOP_PREFIX`, `WORKSHOP_SLOT` e `BEDROCK_MODEL_ID` exportadas com os valores do slot.
+- A sessão do terminal não contém valores pré-definidos de prefixo, slot ou modelo. Antes de criar recursos, gere **uma única vez** um UUID curto com 8 caracteres hexadecimais minúsculos e defina `WORKSHOP_PREFIX` como `nova-essencia-<uuid-curto>`; reutilize exatamente esse valor em todos os nomes de recursos e artefatos gerados.
+- Use obrigatoriamente `anthropic.claude-sonnet-4-6` (Claude Sonnet 4.6) como `BEDROCK_MODEL_ID`. Não apresente opções, não faça perguntas sobre o modelo e não substitua esse valor por outro.
 - As credenciais exportadas pertencem ao usuário IAM provisionado para o workshop. Use essa identidade herdada do processo diretamente em todos os comandos AWS CLI v2 e scripts boto3.
 - Não procure, peça, crie, altere, assuma ou configure roles IAM; este workshop não usa ARNs de roles de execução. Não crie, carregue ou exija um arquivo `.env`; nunca grave credenciais ou valores sensíveis no código, em arquivos de configuração ou no repositório.
 - Criar a base de conhecimento com Amazon Bedrock Knowledge Bases, Amazon S3 e S3 Vectors. Os arquivos em `procedimentos/` são a fonte de conhecimento.

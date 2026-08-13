@@ -11,11 +11,8 @@ Seed para construir um agente de atendimento de uma clínica de estética fictí
    export AWS_SESSION_TOKEN='...' # somente para credenciais temporárias
    export AWS_REGION='us-east-1'
    export AWS_DEFAULT_REGION="$AWS_REGION"
-   export WORKSHOP_PREFIX='ufabc-2026-XX-east'
-   export WORKSHOP_SLOT='XX-east'
-   export BEDROCK_MODEL_ID='MODELO_APROVADO'
    ```
-   Essas credenciais pertencem ao usuário IAM provisionado para o workshop. O Kiro CLI e os comandos que ele executar herdarão essas variáveis e devem usar esse usuário diretamente. **Não crie nem use um arquivo `.env`**, não informe ARNs de roles e nunca registre credenciais no repositório.
+   Essas credenciais pertencem ao usuário IAM provisionado para o workshop. O Kiro CLI e os comandos que ele executar herdarão essas variáveis e devem usar esse usuário diretamente. O agente gerará uma vez o prefixo `nova-essencia-<uuid-curto>` e usará o modelo fixo `anthropic.claude-sonnet-4-6` (Claude Sonnet 4.6); não há escolha manual desses valores. **Não crie nem use um arquivo `.env`**, não informe ARNs de roles e nunca registre credenciais no repositório.
 2. Inicie o Kiro CLI v3:
    ```bash
    kiro-cli --v3
