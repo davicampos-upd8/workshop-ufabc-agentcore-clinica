@@ -14,6 +14,8 @@ Nesta fase, envie os documentos ao S3, crie e sincronize a Knowledge Base, crie 
 
 ## AgentCore obrigatório: Harness, não Runtime direto
 
+Antes de provisionar recursos, leia integralmente `.kiro/skills/amazon-bedrock/SKILL.md`. Essa skill é a referência técnica para a Knowledge Base e para o AgentCore Harness: use suas orientações relevantes de Knowledge Base ao criar, ingerir e recuperar documentos, e suas orientações de AgentCore ao publicar e invocar o agente. As regras específicas deste projeto continuam prevalecendo quando houver divergência.
+
 Use especificamente o **Amazon Bedrock AgentCore Harness**. O Harness é um loop de agente gerenciado e configurável: ele cria e gerencia o Runtime subjacente. Não crie nem publique um AgentCore Runtime HTTP direto, servidor Python próprio, container próprio ou endpoints de protocolo do Runtime; não implemente manualmente `POST` para a invocação do agente.
 
 Antes do deploy, leia `.kiro/skills/amazon-bedrock/references/agentcore-harness.md`, especialmente as seções **What It Is**, **Harness vs. Runtime** e **Deployment Workflow**. Siga o fluxo de criar o Harness, aguardar o status `READY` e invocá-lo pelo data plane com `runtimeSessionId`; a Lambda deve invocar o Harness, não um Runtime direto.

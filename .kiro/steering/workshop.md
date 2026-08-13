@@ -25,7 +25,7 @@ Todos os dados são fictícios e destinados exclusivamente ao workshop.
 - AWS Lambda e Amazon API Gateway para a API HTTP;
 - Amazon S3 para a publicação do front-end estático.
 
-A skill local `amazon-bedrock` é uma referência técnica para Bedrock e AgentCore. As regras deste projeto têm precedência sobre qualquer recomendação genérica dessa skill.
+A skill local `amazon-bedrock` deve ser lida integralmente em `.kiro/skills/amazon-bedrock/SKILL.md` antes do provisionamento. Ela é a referência técnica para criar, ingerir e recuperar documentos na Knowledge Base e para publicar/invocar o AgentCore Harness. As regras deste projeto têm precedência sobre qualquer recomendação genérica dessa skill.
 
 ## Execução da primeira fase
 
