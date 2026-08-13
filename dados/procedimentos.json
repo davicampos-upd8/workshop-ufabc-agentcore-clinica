@@ -1,0 +1,12 @@
+[
+  {"slug":"limpeza-de-pele","nome":"Limpeza de Pele","duracao_min":60},
+  {"slug":"peeling-quimico","nome":"Peeling Químico","duracao_min":45},
+  {"slug":"microagulhamento","nome":"Microagulhamento","duracao_min":60},
+  {"slug":"toxina-botulinica","nome":"Toxina Botulínica","duracao_min":40},
+  {"slug":"preenchimento-acido-hialuronico","nome":"Preenchimento com Ácido Hialurônico","duracao_min":60},
+  {"slug":"criolipolise","nome":"Criolipólise","duracao_min":75},
+  {"slug":"depilacao-laser","nome":"Depilação a Laser","duracao_min":30},
+  {"slug":"drenagem-linfatica","nome":"Drenagem Linfática","duracao_min":50},
+  {"slug":"laser-co2-fracionado","nome":"Laser CO2 Fracionado","duracao_min":60},
+  {"slug":"massagem-modeladora","nome":"Massagem Modeladora","duracao_min":50}
+]

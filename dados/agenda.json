@@ -1,0 +1,14 @@
+[
+  {"id":"S001","data":"2026-08-18","hora":"09:00","profissional":"Ana Souza","duracao_max_min":60,"ocupado":false},
+  {"id":"S002","data":"2026-08-18","hora":"10:30","profissional":"Ana Souza","duracao_max_min":60,"ocupado":false},
+  {"id":"S003","data":"2026-08-18","hora":"14:00","profissional":"Marina Costa","duracao_max_min":45,"ocupado":true},
+  {"id":"S004","data":"2026-08-18","hora":"15:30","profissional":"Marina Costa","duracao_max_min":60,"ocupado":false},
+  {"id":"S005","data":"2026-08-19","hora":"09:30","profissional":"Ana Souza","duracao_max_min":45,"ocupado":false},
+  {"id":"S006","data":"2026-08-19","hora":"11:00","profissional":"Marina Costa","duracao_max_min":75,"ocupado":false},
+  {"id":"S007","data":"2026-08-19","hora":"14:30","profissional":"Ana Souza","duracao_max_min":60,"ocupado":false},
+  {"id":"S008","data":"2026-08-19","hora":"16:00","profissional":"Marina Costa","duracao_max_min":30,"ocupado":false},
+  {"id":"S009","data":"2026-08-20","hora":"09:00","profissional":"Ana Souza","duracao_max_min":60,"ocupado":false},
+  {"id":"S010","data":"2026-08-20","hora":"10:30","profissional":"Marina Costa","duracao_max_min":50,"ocupado":false},
+  {"id":"S011","data":"2026-08-20","hora":"14:00","profissional":"Ana Souza","duracao_max_min":45,"ocupado":false},
+  {"id":"S012","data":"2026-08-20","hora":"15:30","profissional":"Marina Costa","duracao_max_min":60,"ocupado":false}
+]

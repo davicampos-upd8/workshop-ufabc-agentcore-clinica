@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#211b29">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='20' fill='%23513760'/%3E%3Cpath fill='%23fff' d='m32 13 4.3 14.7L51 32l-14.7 4.3L32 51l-4.3-14.7L13 32l14.7-4.3z'/%3E%3C/svg%3E">
+  <title>Nova Essência | Atendimento</title>
+  <style>
+    :root { --ink:#211b29; --muted:#706879; --paper:#fffdfb; --lilac:#f0eaff; --plum:#513760; --rose:#d9718c; --peach:#ffd9c9; --line:#e8e0e8; --shadow:0 20px 60px rgba(53,36,63,.14); }
+    * { box-sizing:border-box; } body { margin:0; min-height:100vh; color:var(--ink); background:radial-gradient(circle at 8% 0%,#f8e7e7 0,transparent 30rem),radial-gradient(circle at 93% 12%,#ece4ff 0,transparent 34rem),#f8f5f7; font-family:Inter, ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    button,input { font:inherit; } button { cursor:pointer; }
+    .shell { max-width:1240px; min-height:100vh; margin:auto; padding:32px 28px; display:grid; grid-template-rows:auto 1fr auto; gap:26px; }
+    header { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:-.04em; font-size:1.2rem; }
+    .mark { width:39px; height:39px; border-radius:14px 14px 14px 4px; display:grid; place-items:center; color:#fff; background:linear-gradient(145deg,#6a4a77,#3c2a4c); box-shadow:0 8px 18px rgba(72,47,89,.25); font-size:20px; }
+    .eyebrow { display:block; margin-bottom:2px; color:var(--muted); font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; font-weight:750; }
+    .open { display:flex; align-items:center; gap:8px; padding:9px 13px; border:1px solid #d9efd9; border-radius:999px; background:#f4fcf5; color:#286236; font-size:.8rem; font-weight:700; }
+    .dot { width:8px; height:8px; border-radius:999px; background:#4ab662; box-shadow:0 0 0 4px rgba(74,182,98,.13); }
+    main { display:grid; grid-template-columns:minmax(260px,.72fr) minmax(480px,1.45fr); align-items:stretch; overflow:hidden; border:1px solid rgba(77,51,88,.1); border-radius:28px; background:rgba(255,253,251,.83); box-shadow:var(--shadow); backdrop-filter:blur(16px); }
+    .intro { position:relative; overflow:hidden; padding:44px 38px; color:#fff; background:linear-gradient(150deg,#2d2338 0%,#50365e 67%,#714b67 100%); }
+    .intro:before,.intro:after { content:""; position:absolute; border-radius:50%; opacity:.25; pointer-events:none; } .intro:before { width:230px;height:230px;right:-80px;top:-65px;background:#f3b6bd; } .intro:after { width:290px;height:290px;left:-170px;bottom:-135px;border:38px solid #cab5ff; }
+    .intro > * { position:relative; } .pill { display:inline-flex; align-items:center; gap:7px; padding:7px 10px; border:1px solid rgba(255,255,255,.24); border-radius:999px; background:rgba(255,255,255,.1); font-size:.73rem; font-weight:700; }
+    .intro h1 { max-width:330px; margin:28px 0 17px; font-size:clamp(2rem,4vw,3.3rem); line-height:.98; letter-spacing:-.07em; } .intro p { max-width:325px; margin:0; color:#e7dce9; line-height:1.55; font-size:.96rem; }
+    .promise { margin-top:42px; padding-top:21px; border-top:1px solid rgba(255,255,255,.19); display:grid; gap:15px; } .promise div { display:flex; gap:11px; align-items:flex-start; color:#f3ecf4; font-size:.83rem; line-height:1.35; } .promise strong { display:block; color:#fff; margin-bottom:2px; } .icon { width:28px; height:28px; flex:0 0 auto; border-radius:9px; display:grid; place-items:center; background:rgba(255,255,255,.12); }
+    .chat { min-height:650px; display:grid; grid-template-rows:auto 1fr auto auto; background:rgba(255,255,255,.72); }
+    .chat-head { display:flex; align-items:center; gap:12px; padding:27px 31px 20px; border-bottom:1px solid var(--line); } .avatar { width:42px;height:42px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(145deg,#ffe3d4,#f5c0cd);font-size:20px; }
+    .chat-head h2 { margin:0; font-size:1rem; letter-spacing:-.03em; } .chat-head p { margin:3px 0 0; color:var(--muted); font-size:.78rem; } .secure { margin-left:auto; color:var(--muted); font-size:.73rem; white-space:nowrap; }
+    .messages { overflow:auto; padding:28px 31px 12px; display:flex; flex-direction:column; gap:17px; scrollbar-width:thin; scrollbar-color:#d7ccda transparent; }
+    .date { align-self:center; padding:6px 10px; border-radius:999px; background:#f6f1f6; color:#877c8a; font-size:.68rem; font-weight:700; }
+    .message { display:flex; gap:9px; max-width:84%; align-items:flex-end; } .message.user { align-self:flex-end; flex-direction:row-reverse; } .mini { width:26px;height:26px; border-radius:9px; display:grid;place-items:center;flex:0 0 auto;background:#f3e7f3;font-size:13px; } .user .mini { background:#e8d9ed; }
+    .bubble { padding:13px 15px; border-radius:17px 17px 17px 5px; background:#f3eef5; color:#3b3142; font-size:.9rem; line-height:1.52; } .user .bubble { border-radius:17px 17px 5px 17px; color:#fff; background:linear-gradient(145deg,#5e3e6d,#704a71); box-shadow:0 7px 17px rgba(94,62,109,.18); }
+    .choices { padding:5px 31px 19px; display:flex; gap:8px; flex-wrap:wrap; } .choice { border:1px solid #e5d5e8; border-radius:999px; padding:9px 12px; color:#62456c; background:#fffafd; font-size:.76rem; font-weight:650; transition:.2s ease; } .choice:hover { background:#f4ebf6; border-color:#cba9d2; transform:translateY(-1px); }
+    form { display:flex; gap:10px; padding:17px 24px 24px; border-top:1px solid var(--line); } input { min-width:0; flex:1; padding:13px 14px; border:1px solid #dfd6e1; outline:none; border-radius:14px; background:#fff; color:var(--ink); transition:.2s ease; } input:focus { border-color:#a47aad; box-shadow:0 0 0 4px rgba(123,77,136,.12); } .send { width:48px; border:0; border-radius:14px; color:#fff; background:var(--plum); font-size:18px; transition:.2s ease; } .send:hover { background:#412a4d; transform:translateY(-1px); } .send:disabled { opacity:.55; cursor:wait; transform:none; }
+    footer { display:flex; justify-content:space-between; gap:20px; color:#827888; font-size:.72rem; line-height:1.45; } footer b { color:#5a4b60; } .notice { max-width:570px; }
+    @media (max-width:820px) { .shell{padding:20px 14px;gap:18px}.intro{padding:30px 27px}.intro h1{margin:20px 0 14px}.promise{margin-top:26px;display:none}main{grid-template-columns:1fr;border-radius:22px}.chat{min-height:560px}.chat-head,.messages{padding-left:20px;padding-right:20px}.choices{padding-left:20px;padding-right:20px}form{padding:14px 16px 16px}.secure{display:none}footer{display:block}.notice{margin-bottom:8px} }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <div class="brand"><div class="mark">✦</div><div><span class="eyebrow">Clínica de estética</span>Nova Essência</div></div>
+      <div class="open"><span class="dot"></span> Atendimento online</div>
+    </header>
+    <main>
+      <aside class="intro">
+        <span class="pill">✦ &nbsp; Cuidado que começa pela escuta</span>
+        <h1>Sua rotina merece atenção.</h1>
+        <p>Conte o que você procura. Nossa assistente apresenta procedimentos, tira dúvidas iniciais e encontra horários para você.</p>
+        <div class="promise">
+          <div><span class="icon">⌁</span><span><strong>Informação com cuidado</strong>Orientações iniciais, sem diagnóstico.</span></div>
+          <div><span class="icon">◷</span><span><strong>Agenda de verdade</strong>Somente horários disponíveis aparecem aqui.</span></div>
+          <div><span class="icon">♡</span><span><strong>Avaliação é essencial</strong>Seu atendimento é personalizado com nossa equipe.</span></div>
+        </div>
+      </aside>
+      <section class="chat" aria-label="Chat de atendimento">
+        <div class="chat-head"><div class="avatar">✦</div><div><h2>Assistente Nova Essência</h2><p>Procedimentos, dúvidas e agendamentos</p></div><span class="secure">🔒 Conversa protegida</span></div>
+        <div class="messages" id="messages" aria-live="polite">
+          <div class="date">Hoje</div>
+          <div class="message"><div class="mini">✦</div><div class="bubble">Olá! Eu sou a assistente da Nova Essência. Posso explicar nossos procedimentos e encontrar um horário que funcione para você. Como posso ajudar?</div></div>
+          <div class="message user"><div class="mini">☺</div><div class="bubble">Tenho manchas que apareceram depois do verão.</div></div>
+          <div class="message"><div class="mini">✦</div><div class="bubble">Entendo. O Peeling Químico costuma fazer parte de protocolos para textura e manchas pós-sol, mas a indicação depende de avaliação presencial. Quer conhecer esse procedimento ou consultar horários?</div></div>
+        </div>
+        <div class="choices" aria-label="Sugestões de mensagem"><button class="choice" type="button">Quais horários estão livres?</button><button class="choice" type="button">Quero saber sobre Peeling Químico</button><button class="choice" type="button">Como funciona a avaliação?</button></div>
+        <form id="chat-form"><input id="message" aria-label="Sua mensagem" autocomplete="off" placeholder="Digite sua mensagem..." required><button class="send" aria-label="Enviar mensagem" type="submit">↑</button></form>
+      </section>
+    </main>
+    <footer><div class="notice"><b>Importante:</b> este atendimento é informativo e não substitui uma avaliação presencial com profissional habilitado.</div><div>Nova Essência · Cuidado, ciência e bem-estar</div></footer>
+  </div>
+  <script>
+    // A integração preencherá esta constante com a URL do endpoint /chat no API Gateway.
+    const API_URL = '';
+    const sessionId = crypto.randomUUID ? crypto.randomUUID() : `nova-essencia-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+    const messages = document.querySelector('#messages'); const form = document.querySelector('#chat-form'); const input = document.querySelector('#message');
+    const escapeHtml = (value) => value.replace(/[&<>'"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#039;','"':'&quot;'}[char]));
+    function addMessage(text, user = false) { const el = document.createElement('div'); el.className = `message${user ? ' user' : ''}`; el.innerHTML = `<div class="mini">${user ? '☺' : '✦'}</div><div class="bubble">${escapeHtml(text)}</div>`; messages.append(el); messages.scrollTop = messages.scrollHeight; }
+    function localReply(text) { const value = text.toLowerCase(); if (value.includes('hor') || value.includes('agenda')) return 'A integração com a agenda será ativada em breve. Quando ela estiver pronta, vou mostrar apenas horários reais e disponíveis.'; if (value.includes('peeling') || value.includes('mancha')) return 'O Peeling Químico pode fazer parte de protocolos para textura e manchas pós-sol, sempre após avaliação presencial. Quer que eu procure horários para uma avaliação?'; return 'Obrigada por contar. Posso explicar os procedimentos ou ajudar você a encontrar um horário para avaliação presencial.'; }
+    async function askAgent(text) { if (!API_URL) return localReply(text); const response = await fetch(API_URL, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({message:text, sessionId})}); if (!response.ok) throw new Error('API indisponível'); const body = await response.json(); return body.reply || 'Recebi sua mensagem, mas não encontrei uma resposta.'; }
+    form.addEventListener('submit', async event => { event.preventDefault(); const text = input.value.trim(); if (!text) return; addMessage(text, true); input.value = ''; const button = form.querySelector('button'); button.disabled = true; try { addMessage(await askAgent(text)); } catch { addMessage('Não consegui acessar o atendimento agora. Tente novamente em alguns instantes.'); } finally { button.disabled = false; input.focus(); } });
+    document.querySelectorAll('.choice').forEach(button => button.addEventListener('click', () => { input.value = button.textContent; form.requestSubmit(); }));
+  </script>
+</body>
+</html>

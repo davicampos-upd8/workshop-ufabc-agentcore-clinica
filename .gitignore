@@ -1,0 +1,14 @@
+# Credenciais e configuração específica do slot do workshop
+.env
+.env.local
+.aws/
+*.pem
+*.key
+
+# Arquivos e artefatos locais
+__pycache__/
+*.py[cod]
+.DS_Store
+
+# Specs individuais geradas durante o workshop
+.kiro/specs/
