@@ -34,7 +34,7 @@ A única etapa posterior é a integração e publicação do `frontend/index.htm
 - As credenciais exportadas pertencem ao usuário IAM provisionado para o workshop. Use essa identidade herdada do processo diretamente em todos os comandos AWS CLI v2 e scripts boto3.
 - Para operações AWS, use exclusivamente AWS CLI v2 e boto3. As regras deste projeto têm precedência sobre recomendações genéricas presentes em referências técnicas.
 - Não crie arquivos locais de credenciais ou configuração de acesso e não altere a configuração de identidade ou acesso da conta. Nunca grave credenciais ou valores sensíveis no código, em arquivos de configuração ou no repositório.
-- Criar a base de conhecimento com Amazon Bedrock Knowledge Bases, Amazon S3 e S3 Vectors. Os arquivos em `procedimentos/` são a fonte de conhecimento.
+- Criar a base de conhecimento com Amazon Bedrock Knowledge Bases, Amazon S3 e S3 Vectors. Enviar todos os arquivos em `procedimentos/` ao bucket S3, criar a fonte de dados, iniciar o job de ingestão/sincronização e aguardar sua conclusão bem-sucedida. Não considerar a Knowledge Base pronta apenas por ter sido criada. Antes de avançar, executar uma consulta real de recuperação e confirmar que ela retorna trechos relevantes dos documentos enviados.
 - Usar Amazon DynamoDB para persistir horários e reservas, inicializando os dados a partir dos arquivos em `dados/`.
 - Usar escrita condicional no DynamoDB para evitar que duas clientes reservem o mesmo horário.
 - Usar Titan Text Embeddings V2 para embeddings.
